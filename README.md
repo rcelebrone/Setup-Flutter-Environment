@@ -1,2 +1,2 @@
 # Setup Flutter Environment
-Um scrip sh para configurar um ambiente de desenvolvimento com Dart e Flutter
+Um script sh para configurar um ambiente de desenvolvimento com Dart e Flutter
