@@ -27,7 +27,7 @@ Dart()
     sudo apt-get install dart
     # add to path
     export PATH="$PATH:/usr/lib/dart/bin"
-    echo 'export PATH="$PATH:/usr/lib/dart/bin"' >> ~/.profile
+    echo "export PATH=$PATH:/usr/lib/dart/bin" >> ~/.profile
 }
 ################################################################################
 # Android SDK                                                                  #
@@ -41,8 +41,8 @@ AndroidSdk()
     export ANDROID_HOME=/usr/lib/android-sdk/bin
     export PATH=$PATH:$ANDROID_HOME/tools/bin
     export PATH=$PATH:$ANDROID_HOME/platform-tools
-    echo 'export PATH=$PATH:$ANDROID_HOME/tools/bin' >> ~/.profile
-    echo 'export PATH=$PATH:$ANDROID_HOME/platform-tools' >> ~/.profile
+    echo "export PATH=$PATH:$ANDROID_HOME/tools/bin" >> ~/.profile
+    echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ~/.profile
 }
 ################################################################################
 # Flutter                                                                      #
@@ -55,7 +55,7 @@ Flutter()
     sudo mv flutter /usr/lib/
     # add to path
     export PATH="$PATH:/usr/lib/flutter/bin"
-    echo 'export PATH="$PATH:/usr/lib/flutter/bin"' >> ~/.profile
+    echo "export PATH=$PATH:/usr/lib/flutter/bin" >> ~/.profile
     # config flutter
     flutter config --android-sdk /usr/lib/android-sdk/bin
     # cache it
