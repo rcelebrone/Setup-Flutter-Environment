@@ -38,11 +38,11 @@ AndroidSdk()
     # Install Android-SDK
     sudo apt install android-sdk
     # Set to path
-    export ANDROID_HOME=/usr/lib/android-sdk/bin
+    export ANDROID_HOME=/usr/lib/android-sdk
     export PATH=$PATH:$ANDROID_HOME/tools/bin
-    export PATH=$PATH:$ANDROID_HOME/platform-tools
+    # TODO: export PATH=$PATH:$ANDROID_HOME/platform-tools
     echo "export PATH=$PATH:$ANDROID_HOME/tools/bin" >> ~/.profile
-    echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ~/.profile
+    # TODO: echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ~/.profile
 }
 ################################################################################
 # Flutter                                                                      #
