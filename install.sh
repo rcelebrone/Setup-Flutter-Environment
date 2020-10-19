@@ -39,9 +39,10 @@ AndroidSdk()
     sudo apt install android-sdk
     # Set to path
     export ANDROID_HOME=/usr/lib/android-sdk
+    echo "export ANDROID_HOME=/usr/lib/android-sdk" >> ~/.profile
     export PATH=$PATH:$ANDROID_HOME/tools/bin
-    # TODO: export PATH=$PATH:$ANDROID_HOME/platform-tools
     echo "export PATH=$PATH:$ANDROID_HOME/tools/bin" >> ~/.profile
+    # TODO: export PATH=$PATH:$ANDROID_HOME/platform-tools
     # TODO: echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ~/.profile
 }
 ################################################################################
