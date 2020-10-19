@@ -25,44 +25,44 @@ Dart()
     sudo sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
     sudo apt-get update
     sudo apt-get install dart
-    # add to path
-    export PATH="$PATH:/usr/lib/dart/bin"
-    echo "export PATH=$PATH:/usr/lib/dart/bin" >> ~/.profile
 }
 ################################################################################
 # Android SDK                                                                  #
 ################################################################################
 AndroidSdk()
 {
-    sudo apt update
-    # Install Android-SDK
-    sudo apt install android-sdk
-    # Set to path
-    export ANDROID_HOME=/usr/lib/android-sdk
-    echo "export ANDROID_HOME=/usr/lib/android-sdk" >> ~/.profile
-    export PATH=$PATH:$ANDROID_HOME/tools/bin
-    echo "export PATH=$PATH:$ANDROID_HOME/tools/bin" >> ~/.profile
-    # TODO: export PATH=$PATH:$ANDROID_HOME/platform-tools
-    # TODO: echo "export PATH=$PATH:$ANDROID_HOME/platform-tools" >> ~/.profile
+    echo "Follow steps: https://flutter.dev/docs/get-started/install/linux#android-setup"
 }
 ################################################################################
 # Flutter                                                                      #
 ################################################################################
 Flutter()
 {
-    # clone flutter
-    git clone https://github.com/flutter/flutter.git
-    # move to lib
-    sudo mv flutter /usr/lib/
-    # add to path
-    export PATH="$PATH:/usr/lib/flutter/bin"
-    echo "export PATH=$PATH:/usr/lib/flutter/bin" >> ~/.profile
-    # config flutter
-    flutter config --android-sdk /usr/lib/android-sdk/bin
-    # cache it
-    flutter precache
+    # download flutter
+    curl -O https://storage.googleapis.com/flutter_infra/releases/stable/linux/flutter_linux_1.22.2-stable.tar.xz
+    # extract
+    tar xf flutter_linux_1.22.2-stable.tar.xz
+    # remove 
+    rm flutter_linux_1.22.2-stable.tar.xz
+    # move to bin
+    sudo mv flutter /usr/lib
     # check 
     flutter doctor
+}
+################################################################################
+# Requirements                                                                 #
+################################################################################
+PreInstall()
+{
+    sudo apt update
+}
+################################################################################
+# Requirements                                                                 #
+################################################################################
+PostInstall()
+{
+    # add to path
+    export PATH="$PATH:/usr/lib/flutter/bin:/usr/lib/dart/bin"
 }
 ################################################################################
 # Process the input options. Add options as needed.                            #
@@ -81,6 +81,7 @@ done
 ################################################################################
 # Program                                                                      #
 ################################################################################
+PreInstall
 Dart
-AndroidSdk
 Flutter
+AndroidSdk
